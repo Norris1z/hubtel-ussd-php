@@ -28,11 +28,11 @@ For `Laravel`, add the `route` to the `except` array in the `VerifyCsrfToken` mi
 
 `Hubtel\USSD\Request::class` is a class which represents the request from `Hubtel`. It has methods for all the parameters listed on `Hubtel's Documentation Page`.
 
-[Request.php](https://)
+View Source [Request.php](https://github.com/Norris1z/hubtel-ussd-php/blob/master/src/Hubtel/Request.php)
 
 `Hubtel\USSD\Response::class` is a class which represents the response sent to `Hubtel`. It has methods for all the parameters listed on `Hubtel's Documentation Page`.
 
-[Response.php](https://)
+View Source [Response.php](https://github.com/Norris1z/hubtel-ussd-php/blob/master/src/Hubtel/Response.php)
  
 `RequestTypes::class` has two properties, `RESPONSE` and `RELEASE` for indicating the type of response in a sequence.
 
@@ -77,8 +77,8 @@ Visit [Hubtel's USSD Api documentation page](https://developers.hubtel.com/docum
 and response classes
 
 ## Examples
-1. [Laravel](https://developers.hubtel.com/documentations/ussd-api)
-2. [Lumen](https://developers.hubtel.com/documentations/ussd-api)
+1. [Laravel](https://github.com/Norris1z/hubtel-ussd-php/blob/master/examples/Laravel.md)
+2. [Lumen](https://github.com/Norris1z/hubtel-ussd-php/blob/master/examples/Lumen.md)
 
 
 Feel free to submit pull-requests for examples with other frameworks :blush:

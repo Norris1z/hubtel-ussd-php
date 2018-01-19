@@ -29,7 +29,7 @@
      * To use the toJson method on the Hubtel\USSD\Response, you must explicitly specify your content type
      **/
      
-    Sequence1.php
+    //Sequence1.php
     <?php
 
     namespace App\Sequences;
@@ -48,7 +48,7 @@
         }
     }
 
-    Sequence2.php
+    //Sequence2.php
     <?php
 
     namespace App\Sequences;
@@ -78,7 +78,7 @@
         }
     }
 
-    Sequence3.php
+    //Sequence3.php
     <?php
     namespace App\Sequences;
 
