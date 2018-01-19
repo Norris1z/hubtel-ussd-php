@@ -1,0 +1,30 @@
+{
+    "name": "norris1z/hubtel-ussd",
+    "description": "An unofficial php library for processing Hubtel USSD requests",
+    "keywords": ["php","ussd","Hubtel"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Norris Oduro Tei",
+            "email": "norrisjibril@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "Hubtel\\USSD\\": "src/Hubtel/"
+        }
+    },
+    "scripts": {
+      "test": "vendor\\bin\\phpunit --colors=always",
+      "cs": "vendor\\bin\\php-cs-fixer fix src\\ --rules=@PSR2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+      "php": ">=5.6.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.10",
+        "phpunit/phpunit": "^6.5"
+    }
+}
