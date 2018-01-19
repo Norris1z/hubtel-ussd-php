@@ -102,4 +102,36 @@ class USSDTest extends PHPUnit\Framework\TestCase{
 
         return $ret;
     }
+
+    /** @test */
+    public function it_returns_a_something_went_wrong_response_if_the_sequence_from_the_request_is_not_numeric() {
+        $this->request->setSequence("some string sequence");
+        $response = USSD::process($this->request,[
+            new class implements \Hubtel\USSD\SequenceInterface{
+
+                public function handle(Request $request)
+                {
+                    return \Hubtel\USSD\Response::createInstance("Welcome to Volatile",\Hubtel\USSD\RequestTypes::RESPONSE,"Some Info");
+                }
+            }
+        ]);
+        $this->assertEquals($response->getMessage(),"Sorry!. Something went wrong");
+        $this->assertEquals($response->getType(),\Hubtel\USSD\RequestTypes::RELEASE);
+    }
+
+    /** @test */
+    public function it_returns_a_something_went_wrong_response_if_the_sequence_is_not_in_the_array() {
+        $this->request->setSequence("some invalid sequence");
+        $response = USSD::process($this->request,[
+            new class implements \Hubtel\USSD\SequenceInterface{
+
+                public function handle(Request $request)
+                {
+                    return \Hubtel\USSD\Response::createInstance("Welcome to Volatile",\Hubtel\USSD\RequestTypes::RESPONSE,"Some Info");
+                }
+            }
+        ]);
+        $this->assertEquals($response->getMessage(),"Sorry!. Something went wrong");
+        $this->assertEquals($response->getType(),\Hubtel\USSD\RequestTypes::RELEASE);
+    }
 }
