@@ -38,4 +38,19 @@ class ResponseTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($HubtelResponse->getType(),RequestTypes::RESPONSE);
         $this->assertEquals($HubtelResponse->getClientState(),"JabClari");
     }
+
+    /** @test * */
+    public function it_can_mask_the_next_route()
+    {
+        $HubtelResponse = new Response();
+        $HubtelResponse->setMessage("Welcome JabClari");
+        $HubtelResponse->setType(RequestTypes::RESPONSE);
+        $HubtelResponse->setMaskNextRoute(true);
+        $HubtelResponse->setClientState("JabClari");
+
+        $this->assertEquals($HubtelResponse->getMessage(),"Welcome JabClari");
+        $this->assertEquals($HubtelResponse->getType(),RequestTypes::RESPONSE);
+        $this->assertEquals($HubtelResponse->getMaskNextRoute(),true);
+        $this->assertEquals($HubtelResponse->getClientState(),"JabClari");
+    }
 }

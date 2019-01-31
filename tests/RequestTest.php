@@ -18,8 +18,8 @@ class RequestTest extends PHPUnit\Framework\TestCase{
 
   /** @test **/
   public function it_can_construct_using_parameters_passed_to_its_constructor() {
-       $HubtelRequest = new Request("2331234567","8883ba8b1e7348b8b566b4b3396575c2",
-          "712","Initiation","1","mtn","1","hello Norris");
+       $HubtelRequest = new Request(["Mobile"=>"2331234567","SessionId"=>"8883ba8b1e7348b8b566b4b3396575c2",
+          "ServiceCode"=>"712","Type"=>"Initiation","Message"=>"1","Operator"=>"mtn","Sequence"=>"1","ClientState"=>"hello Norris"]);
 
         $this->assertEquals($HubtelRequest->getMobile(),"2331234567");
         $this->assertEquals($HubtelRequest->getSessionId(),"8883ba8b1e7348b8b566b4b3396575c2");

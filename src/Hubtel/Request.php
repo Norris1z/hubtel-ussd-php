@@ -13,21 +13,21 @@ class Request
     protected $sequence;
     protected $clientState;
 
-    public function __construct($mobile = null, $sessionId = null, $serviceCode = null, $type = null, $message = null, $operator = null, $sequence = null, $clientState = null)
+    public function __construct($options = ["Mobile"=>null,"SessionId"=>null,"ServiceCode"=>null,"Type"=>null,"Message"=>null,"Operator"=>null,"Sequence"=>null,"ClientState"=>null])
     {
-        $this->mobile = $mobile;
-        $this->sessionId = $sessionId;
-        $this->serviceCode = $serviceCode;
-        $this->type = $type;
-        $this->message = $message;
-        $this->operator = $operator;
-        $this->sequence = $sequence;
-        $this->clientState = $clientState;
+        $this->mobile = $options['Mobile'];
+        $this->sessionId = $options['SessionId'];
+        $this->serviceCode = $options['ServiceCode'];
+        $this->type = $options['Type'];
+        $this->message = $options['Message'];
+        $this->operator = $options['Operator'];
+        $this->sequence = $options['Sequence'];
+        $this->clientState = $options['ClientState'];
     }
 
-    public static function createInstance($mobile = null, $sessionId = null, $serviceCode = null, $type = null, $message = null, $operator = null, $sequence = null, $clientState = null)
+    public static function createInstance($options)
     {
-        return new self($mobile, $sessionId, $serviceCode, $type, $message, $operator, $sequence, $clientState);
+        return new self($options);
     }
 
     public function getMobile()

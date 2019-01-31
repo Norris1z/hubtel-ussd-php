@@ -16,7 +16,7 @@
     class USSDController extends Controller
     {
         public function __invoke(Request $request) {
-            return USSD::process(USSDRequest::createInstance(... array_values($request->toArray())),[
+            return USSD::process(USSDRequest::createInstance($request->toArray()),[
                 new Sequence1(),
                 new Sequence2(),
                 new Sequence3()

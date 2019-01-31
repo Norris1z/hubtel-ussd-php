@@ -9,8 +9,8 @@ class USSDTest extends PHPUnit\Framework\TestCase{
 
     public function setUp()
     {
-        $this->request = new Request("2331234567","8883ba8b1e7348b8b566b4b3396575c2",
-            "712","Initiation","1","mtn","1","hello Norris");
+        $this->request = new Request(["Mobile"=>"2331234567","SessionId"=>"8883ba8b1e7348b8b566b4b3396575c2",
+          "ServiceCode"=>"712","Type"=>"Initiation","Message"=>"1","Operator"=>"mtn","Sequence"=>"1","ClientState"=>"hello Norris"]);
 
         parent::setUp();
     }
